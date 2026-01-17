@@ -43,15 +43,25 @@ The agent leverages a **Mixture of Pruning Experts (MoPE)** to evaluate node val
 
 ## 📊 Main Results
 
-K-SVA achieves consistent improvements across reasoning, robustness, and hallucination evaluation benchmarks.
+Comparison with state-of-the-art methods across reasoning and robustness benchmarks. Results are reported as **Mean ± Std**.
 
-| Category | Method | ScienceQA (Reasoning) | VizWiz (Robustness) | POPE (Hallucination) |
-| :--- | :--- | :---: | :---: | :---: |
-| **LMMs** | LLaVA-1.5 | 89.8 | 57.2 | 83.5 |
-| **RAG (SOTA)** | PathRAG | 90.6 | 59.2 | 83.5 |
-| **Ours** | **K-SVA** | **92.8** | **63.5** | **88.2** |
+| Category | Method | ScienceQA | SQA-IMG | GeoQA | VizWiz | TextVQA | POPE (F1) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **LMMs** | InstructBLIP | 87.5 ± 0.8 | 85.2 ± 0.9 | 80.1 ± 1.1 | 52.4 ± 1.4 | 63.5 ± 0.8 | 77.5 ± 0.7 |
+| | Shikra | 88.9 ± 0.6 | 86.5 ± 0.7 | 81.8 ± 0.8 | 54.8 ± 1.2 | 64.8 ± 0.7 | 80.1 ± 0.6 |
+| | LLaVA-1.5 | 89.8 ± 0.5 | 87.5 ± 0.6 | 82.9 ± 0.7 | 57.2 ± 1.0 | 68.1 ± 0.6 | 83.5 ± 0.5 |
+| **KG-Augmented** | Mucko | 88.2 ± 0.7 | 85.8 ± 0.8 | 80.5 ± 1.0 | 48.5 ± 1.5 | 57.2 ± 0.9 | 78.4 ± 0.8 |
+| | KAT | 89.5 ± 0.6 | 86.9 ± 0.7 | 80.2 ± 0.9 | 51.6 ± 1.3 | 59.5 ± 0.8 | 79.8 ± 0.7 |
+| **Graph Reasoning** | RED-GNN | 83.5 ± 1.2 | 80.1 ± 1.3 | 75.4 ± 1.5 | 43.8 ± 1.8 | 53.1 ± 1.1 | 74.2 ± 1.0 |
+| | KGTrimmer | 90.2 ± 0.5 | 88.0 ± 0.6 | 83.1 ± 0.7 | 56.5 ± 1.1 | 61.5 ± 0.8 | 82.1 ± 0.6 |
+| | MoKGR | 90.8 ± 0.5 | 88.5 ± 0.5 | 84.2 ± 0.6 | 59.1 ± 0.9 | 65.0 ± 0.7 | 84.4 ± 0.5 |
+| **Structure-RAG** | HOLMES | 90.3 ± 0.6 | 87.9 ± 0.7 | 83.5 ± 0.8 | 58.9 ± 1.0 | 64.5 ± 0.8 | 82.9 ± 0.6 |
+| | PathRAG | 90.6 ± 0.5 | 88.3 ± 0.6 | 84.1 ± 0.7 | 59.2 ± 1.1 | 64.8 ± 0.7 | 83.5 ± 0.6 |
+| | PoG | 91.2 ± 0.5 | **90.8 ± 0.5** | 84.8 ± 0.7 | 59.8 ± 1.2 | 67.5 ± 0.7 | 85.1 ± 0.6 |
+| **Ours** | **K-SVA** | **92.8 ± 0.4** | 89.0 ± 0.6 | **86.5 ± 0.5** | **63.5 ± 0.7** | **69.2 ± 0.5** | **88.2 ± 0.4** |
 
-> **Note**: For full experimental results, please refer to the main paper.
+> **Note**: **Bold** denotes the best performance. K-SVA achieves consistent improvements in noise-intensive scenarios (VizWiz) and hallucination mitigation (POPE), validating the "Grounding Before Reasoning" paradigm.
+
 
 ![Results Analysis](assets/results.png)
 *Figure 3: Sensitivity analysis and robustness comparison under varying noise levels.*
