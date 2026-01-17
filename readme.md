@@ -68,9 +68,9 @@ Comparison with state-of-the-art methods across reasoning and robustness benchma
 
 ---
 
-## 🛠️ Installation
+### 🎥 Dynamic Pruning Demo
+Here we visualize the **K-SVA Agent** eliminating a hallucinated object ("Pizza") from the graph.
 
-1. **Clone the repository** (Anonymous link):
-   ```bash
-   git clone [https://anonymous.4open.science/r/KSVA-Project-XXXX](https://anonymous.4open.science/r/KSVA-Project-XXXX)
-   cd KSVA-Project-XXXX
+<p align="center">
+  <img src="assets/ksva_pizza_demo.gif" width="500" />
+</p>
